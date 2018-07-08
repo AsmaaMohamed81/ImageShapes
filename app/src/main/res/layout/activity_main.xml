@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".MainActivity"
+    android:layoutDirection="ltr"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/root"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:background="@drawable/frame_bg"
+                    >
+                  <!--  <ImageView
+                        android:id="@+id/img1"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:scaleType="matrix"
+                        />-->
+                    <net.karthikraj.shapesimage.ShapesImage
+                        android:id="@+id/img1"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        app:shape="circle"
+                        android:scaleType="matrix"
+                        />
+                    <ImageView
+                        android:id="@+id/img1_btn"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/add_icon"
+                        />
+                </FrameLayout>
+
+
+                <FrameLayout
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/frame_bg"
+                    >
+                    <net.karthikraj.shapesimage.ShapesImage
+                        android:id="@+id/img2"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        app:shape="circle"
+                        android:scaleType="matrix"
+                        />
+                    <ImageView
+                        android:id="@+id/img2_btn"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/add_icon"
+                        />
+                </FrameLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginLeft="30dp"
+                    android:background="@drawable/frame_bg"
+
+                    >
+                    <net.karthikraj.shapesimage.ShapesImage
+                        android:id="@+id/img3"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        app:siBorderWidth="6dp"
+                        android:scaleType="matrix"
+                        app:shape="circle"
+
+                        app:siBorderColor="#000000"/>
+                    <ImageView
+                        android:id="@+id/img3_btn"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/add_icon"
+                        />
+                </FrameLayout>
+
+
+                <FrameLayout
+
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_gravity="top"
+                    android:background="@drawable/frame_bg"
+                    >
+                    <net.karthikraj.shapesimage.ShapesImage
+                        android:id="@+id/img4"
+                        app:shape="circle"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        app:siBorderWidth="6dp"
+                        app:siBorderColor="#000000"
+                        android:scaleType="matrix"
+
+
+                        />
+                    <ImageView
+                        android:id="@+id/img4_btn"
+
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/add_icon"
+                        />
+                </FrameLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    <Button
+        android:id="@+id/save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="save"
+        />
+    <ImageView
+        android:id="@+id/fm"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        />
+    </RelativeLayout>
+
