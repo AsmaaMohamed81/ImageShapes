@@ -4,13 +4,29 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
 
-    <net.karthikraj.shapesimage.ShapesImage
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:shape="octagon"
-        android:src="@drawable/girl2"
-        android:rotation="70"
-        />
+        <net.karthikraj.shapesimage.ShapesImage
+            android:id="@+id/shape1"
+            android:layout_width="218dp"
+            android:layout_height="218dp"
+            android:layout_marginTop="70dp"
+            android:src="@color/colorPrimary"
+            app:shape="octagon" />
 
+        <net.karthikraj.shapesimage.ShapesImage
+            android:layout_width="218dp"
+            android:layout_height="218dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="100dp"
+            android:layout_marginEnd="38dp"
+            android:src="@color/colorPrimary"
+            app:shape="octagon"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="38dp" />
+    </RelativeLayout>
 </FrameLayout>
