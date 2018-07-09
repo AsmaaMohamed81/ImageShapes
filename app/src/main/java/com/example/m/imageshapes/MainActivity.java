@@ -4,6 +4,7 @@ import android.content.ClipData;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.PointF;
 import android.net.Uri;
@@ -22,14 +23,17 @@ import android.widget.Toast;
 import com.github.siyamed.shapeimageview.CircularImageView;
 
 import net.karthikraj.shapesimage.ShapesImage;
+import net.margaritov.preference.colorpicker.ColorPickerDialog;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
+
+
 public class MainActivity extends AppCompatActivity implements View.OnTouchListener{
     private ShapesImage img1,img2,img3,img4;
-    private ImageView img1_btn,img2_btn,img3_btn,img4_btn,fm;
+    private ImageView pick,img1_btn,img2_btn,img3_btn,img4_btn,fm;
     private Bitmap bitmap1,bitmap2,bitmap3,bitmap4;
     private final int img0_req=0;
     private final int img1_req=1;
@@ -56,6 +60,13 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
     private float d = 0f;
     private float newRot = 0f;
     private float[] lastEvent = null;
+
+    ColorPickerDialog pickcolor;
+    int color;
+
+    RelativeLayout relative;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,6 +95,9 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
         img2_btn = findViewById(R.id.img2_btn);
         img3_btn = findViewById(R.id.img3_btn);
         img4_btn = findViewById(R.id.img4_btn);
+        pick = findViewById(R.id.pick);
+        relative=findViewById(R.id.relative);
+
 
         circularImageViewList.add(img1);
         circularImageViewList.add(img2);
@@ -101,6 +115,36 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
         img2.setOnTouchListener(this);
         img3.setOnTouchListener(this);
         img4.setOnTouchListener(this);
+
+        pick.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                color= Color.parseColor("#ffffff");
+                pickcolor=new ColorPickerDialog(MainActivity.this,color);
+                pickcolor.setAlphaSliderVisible(true);
+                pickcolor.setTitle("PICK");
+
+                pickcolor.setOnColorChangedListener(new ColorPickerDialog.OnColorChangedListener() {
+                    @Override
+                    public void onColorChanged(int color) {
+
+
+
+                        relative.setBackgroundColor(color);
+
+
+
+
+                    }
+                });
+
+
+                pickcolor.show();
+
+
+            }
+        });
 
 
     }
